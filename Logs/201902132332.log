@@ -1,0 +1,4 @@
+2019-02-13 23:32:48,053 - lastday_lastmonth.py[line:51] - INFO: this is a logger info message
+2019-02-13 23:32:48,053 - lastday_lastmonth.py[line:52] - WARNING: this is a logger warning message
+2019-02-13 23:32:48,053 - lastday_lastmonth.py[line:53] - ERROR: this is a logger error message
+2019-02-13 23:32:48,053 - lastday_lastmonth.py[line:54] - CRITICAL: this is a logger critical message

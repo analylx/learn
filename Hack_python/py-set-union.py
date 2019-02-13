@@ -1,0 +1,2 @@
+#Here, input() == 0 is always evaluated to False(it has to!), so we consume one line of input and go ahead for processing second part of 'or'.
+print(input() == 0 or len(set(input().split()).union(input() == 0 or input().split())))
