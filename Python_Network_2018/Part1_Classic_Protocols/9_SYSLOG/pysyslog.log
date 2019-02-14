@@ -1,0 +1,9 @@
+<190>5241: *Jul 25 09:28:52.975: %SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.1.1.80 port 0 CLI Request Triggered
+<190>5242: *Jul 25 09:28:53.038: %SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.1.1.100 port 0 CLI Request Triggered
+<190>5243: *Jul 25 09:28:53.975: %SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.1.1.80 port 514 started - CLI initiated
+<190>5244: *Jul 25 09:28:53.976: %SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.1.1.100 port 514 started - CLI initiated
+<189>5245: *Jul 25 09:28:54.699: %SYS-5-CONFIG_I: Configured from console by admin on vty0 (10.1.1.100)
+<189>5246: *Jul 25 09:29:06.220: %LINK-5-CHANGED: Interface GigabitEthernet2, changed state to administratively down
+<189>5247: *Jul 25 09:29:07.221: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet2, changed state to down
+<189>5248: *Jul 25 09:29:08.126: %SYS-5-CONFIG_I: Configured from console by admin on vty0 (10.1.1.100)
+<189>5249: *Jul 25 09:29:11.517: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet2, changed state to up

@@ -1,0 +1,15 @@
+http://blog.csdn.net/shile/article/details/52242103  VNC安装
+https://doub.io/wlzy-12/ 安装BT
+
+不断的记录问题，写下答案，反复的遇到相同的问题，参考答案，再次实践当初的答案或者找到更优的答案
+https://www.zybuluo.com/ghosert/note/3282
+
+https://www.ietf.org/mail-archive/web/rtg-bfd/current/msg03454.html     IPv6 BFD for sasha
+https://www.ietf.org/mail-archive/web/rtg-bfd/current/threads.html#03449
+This is the way.
+this the another way.
+way again and way again.
+
+This is the way.1
+this the another way.2
+Way again and way again.3
