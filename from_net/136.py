@@ -16,7 +16,5 @@ if __name__ == '__main__':
 
     # 找出div中的内容
     soup_text = soup.find('div', id='content')
-    # print(soup_text.get_text())
     with open("136.txt", "w+") as fi:
         fi.write(soup_text.text)
-
