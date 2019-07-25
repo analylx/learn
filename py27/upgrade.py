@@ -23,23 +23,28 @@ import os
 import re
 
 #需要全局使用的变量，尽量赋给初始值
-startup_field = "up"#启动半区，up/donw,默认是up
+startup_field = "up"  #启动半区，up/donw,默认是up
 ne_type = "1800"
-ne_version =""#需要升级的版本
-ne_ip_address = ""#200.200.180.58
-standby_mcp_ip = ""#169.254.1.3
+ne_version = ""  #需要升级的版本
+ne_ip_address = ""  #200.200.180.58
+standby_mcp_ip = ""  #169.254.1.3
+
 
 def sync_and_wait():
     pass
 
+
 def check_startup_file():
     pass
-    
+
+
 def get_version():
     pass
 
+
 def download_to_ne():
     pass
+
 
 def check_standby_mcp():
     return standby_mcp_ip

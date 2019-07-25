@@ -1,10 +1,10 @@
 #!/usr/bin/python
-#-*-coding:utf8-*-
+# -*-coding:utf8-*-
 
 __author__ = 'laixintao'
 
 import socket
-import fcntl
+#import fcntl
 import time
 import struct
 import smtplib
@@ -21,18 +21,19 @@ smtpserver = "smtp.sina.com"
 username = "reaspberrypi@sina.com"
 password = "123456"
 sender = "reaspberrypi@sina.com"
-receiver = ["receiver@sina.com","master@sina.com"]
+receiver = ["receiver@sina.com", "master@sina.com"]
 subject = "[RPI]IP CHANGED"
 
 # file_path config
-file_path = "/root/rootcrons/lastip.txt"
+file_path = "lastip.txt"
+
 
 def sendEmail(msghtml):
     msgRoot = MIMEMultipart('related')
     msgRoot["To"] = ','.join(receiver)
     msgRoot["From"] = sender
-    msgRoot['Subject'] =  subject
-    msgText = MIMEText(msghtml,'html','utf-8')
+    msgRoot['Subject'] = subject
+    msgText = MIMEText(msghtml, 'html', 'utf-8')
     msgRoot.attach(msgText)
     smtp = smtplib.SMTP()
     smtp.connect(smtpserver)
@@ -44,20 +45,22 @@ def sendEmail(msghtml):
 def check_network():
     while True:
         try:
-            print "Network is Ready!"
+            print ("Network is Ready!")
             break
-        except Exception , e:
-           print e
-           print "Network is not ready,Sleep 5s...."
-           time.sleep(10)
+        except Exception, e:
+            print e
+            print ("Network is not ready,Sleep 5s....")
+            time.sleep(10)
     return True
+
 
 def get_lan_ip():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.connect(("1.1.1.1",80))
-    ipaddr=s.getsockname()[0]
+    s.connect(("1.1.1.1", 80))
+    ipaddr = s.getsockname()[0]
     s.close()
     return ipaddr
+
 
 class Getmyip:
     def getip(self):
@@ -76,12 +79,14 @@ class Getmyip:
                     print "Get the LAN ip."
                     myip = get_lan_ip()
         return myip
-    def visit(self,url):
-        opener = urllib2.urlopen(url,timeout=20)
+
+    def visit(self, url):
+        opener = urllib2.urlopen(url, timeout=20)
         if url == opener.geturl():
             str = opener.read()
-            print "IP information from",url
-        return re.search('\d+\.\d+\.\d+\.\d+',str).group(0)
+            print "IP information from", url
+        return re.search('\d+\.\d+\.\d+\.\d+', str).group(0)
+
 
 def get_network_ip():
     getmyip = Getmyip()
@@ -91,9 +96,9 @@ def get_network_ip():
 
 if __name__ == '__main__':
     check_network()
-    ipaddr=get_network_ip()
-    lanip=get_lan_ip()
-    emailip=str(ipaddr)+" "+str(lanip)
+    ipaddr = get_network_ip()
+    lanip = get_lan_ip()
+    emailip = str(ipaddr)+" "+str(lanip)
     print(emailip)
     ip_file = open(file_path)
     last_ip = ip_file.read()
@@ -102,7 +107,7 @@ if __name__ == '__main__':
         print "IP not change."
     else:
         print "IP changed. New ip: {}".format(emailip)
-        ip_file = open(file_path,"w")
+        ip_file = open(file_path, "w")
         ip_file.write(str(emailip))
         ip_file.close()
 

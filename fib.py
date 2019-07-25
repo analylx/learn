@@ -9,5 +9,6 @@ def fib(n: int = 'int para') -> 'return an int list':
 
 
 if __name__ == '__main__':
-    print(fib.__doc__)
-    fib(600000)
+    print("first1:", fib.__doc__)
+    fib(60000000)
+    print("\nlast:", fib.__doc__)

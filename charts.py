@@ -3,7 +3,8 @@ from pyecharts import Map, Geo
 from pyecharts import Liquid, Polar, Radar
 from pyecharts import WordCloud
 import os
-
+#pip install pyecharts==0.1.9.4 
+#指定安装旧版的，新的1.2.1无法成功import
 # 世界地图数据
 value = [95.1, 23.2, 43.3, 66.4, 88.5]
 attr= ["China", "Canada", "Brazil", "Russia", "United States"]

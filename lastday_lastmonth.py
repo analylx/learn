@@ -10,7 +10,7 @@ logging.debug("默认只显示到warning")
 
 
 def getLastDayOfLastMonth():
-    d = datetime.now()+timedelta(weeks=300)#往后多少时间，默认是天
+    d = datetime.now()+timedelta(weeks=6)#往后多少时间，默认是天
     logging.info("the value of d: %s",d)
     #c = calendar.Calendar()
 
@@ -31,7 +31,7 @@ def getLastDayOfLastMonth():
 
 if __name__ == "__main__":
     logging.error("oooop error")
-    print(getLastDayOfLastMonth())
+    print('The real result is:',getLastDayOfLastMonth())
     #以下步骤是将日志写入到文件
     # 第一步，创建一个logger
     logger = logging.getLogger()

@@ -1,3 +1,6 @@
+import pysnooper
+
+@pysnooper.snoop("d:/logs/log111.log")
 def small_least(arry):
     small_least = arry[0]
     small_least_index = 0
