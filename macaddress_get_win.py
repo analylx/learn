@@ -15,7 +15,7 @@ def get_mac_address():
 def get_mac_info():
     mac_info = subprocess.check_output('GETMAC /v /FO list',
                                        stderr=subprocess.STDOUT)
-    logging.debug("mac_info is:", mac_info)
+    logging.debug("mac_info is: %s", mac_info)#这里的%s不能去掉，否则会报参数过多的错误
     print('Your MAC address:', mac_info)
 
 

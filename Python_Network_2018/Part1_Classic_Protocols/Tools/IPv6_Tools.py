@@ -11,7 +11,7 @@ import ipaddress
 
 def full_ipv6(ipv6):  # 转换为完整的IPv6地址
     ipv6_section = ipv6.split(":")  # 对原始地址使用":"进行分割
-
+    #print("ipv6_section is :", ipv6_section)
     ipv6_section_len = len(ipv6.split(":"))  # 了解原始地址的分段数量
 
     if ipv6_section.index(''):
@@ -36,7 +36,8 @@ def full_ipv6(ipv6):  # 转换为完整的IPv6地址
 
 
 def Solicited_node_multicast_address(ipv6):
-    return "FF02::1:FF" + full_ipv6(ipv6)[-7:]  # 拼接得到Solicited_node_multicast_address
+    return "FF02::1:FF" + full_ipv6(ipv6)[
+        -7:]  # 拼接得到Solicited_node_multicast_address
 
 
 def mac_to_ipv6_linklocal(mac):
@@ -95,12 +96,14 @@ def ipv6_to_mac(ipv6):
     return '{:02x}:{:02x}:{:02x}:{:02x}:{:02x}:{:02x}'.format(
         mac_1, mac_2, mac_3, mac_4, mac_5, mac_6)
 
+
 # 微软默认并不使用EUI64地址,而是随机产生
 # https://www.dan.me.uk/blog/2011/02/10/windows-7-ipv6-auto-assignment-fix/
 # netsh interface ipv6 set privacy state=disabled store=active
 # netsh interface ipv6 set privacy state=disabled store=persistent
 # netsh interface ipv6 set global randomizeidentifiers=disabled store=active
 # netsh interface ipv6 set global randomizeidentifiers=disabled store=persistent
+
 
 def mac_to_eui64(mac, prefix):
     # 移除多余的字符 空格,冒号,点,减号
@@ -126,7 +129,8 @@ def mac_to_eui64(mac, prefix):
     low2 = mac_value & 0xffff
 
     # 使用格式化打印,转换10进制位16进制,x为16进制字符串,并且使用02控制长度,并且补0
-    host_id = '{:04x}:{:02x}ff:fe{:02x}:{:04x}'.format(high2, high1, low1, low2)
+    host_id = '{:04x}:{:02x}ff:fe{:02x}:{:04x}'.format(high2, high1, low1,
+                                                       low2)
 
     # 提取prefix字符串"/"之前的部分
     net = prefix.split("/")[0]

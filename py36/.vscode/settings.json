@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "D:\\Python27\\python.exe",
+    "python.testing.pytestArgs": [
+        "algorithms"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true
+}

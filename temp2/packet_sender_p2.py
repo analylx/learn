@@ -325,6 +325,7 @@ def create_ip_sender():
     :return: None
     """
     # IP帧编辑区
+    # ip_fields的类型是tuple('IP协议的版本：', '首部长度(5-15)：',...)
     ip_fields = 'IP协议的版本：', '首部长度(5-15)：', '区分服务：', '总长度：', '标识：', '标志(0-2)DF,MF：', \
                 '片偏移：', '生存时间：', '协议(数据部分)：', '首部校验和：', '源IP地址：', '目的IP地址：'
     entries = create_protocol_editor(protocol_editor_panedwindow, ip_fields)
